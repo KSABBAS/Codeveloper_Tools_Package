@@ -1,8 +1,6 @@
+import 'package:codeveloper_tools/MyTools/tools/CMaker_Tools/AnimatedCMaker.dart';
+import 'package:codeveloper_tools/MyTools/tools/CMaker_Tools/CMaker.dart';
 import 'package:flutter/material.dart';
-import 'package:my_tools_development/MyTools/tools/CMaker_Tools/AnimatedCMaker.dart';
-import 'package:my_tools_development/MyTools/tools/CMaker_Tools/CMaker.dart';
-// import 'package:tix/MyTools/tools/CMaker_Tools/AnimatedCMaker.dart';
-// import 'package:tix/MyTools/tools/CMaker_Tools/CMaker.dart';
 class MyRowWidgetSelector extends StatefulWidget {
   MyRowWidgetSelector({
     super.key,
