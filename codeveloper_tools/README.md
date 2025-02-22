@@ -36,7 +36,7 @@ Add Codeveloper Tools to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  codeveloper_tools: ^0.0.10
+  codeveloper_tools: ^0.0.12
 ```
 
 ## YouTube Channel
@@ -53,7 +53,12 @@ https://www.youtube.com/@KS_ABBAS
 
 Below is an explanation of the `MyFlipRotateTimer` widget. This widget displays a timer using animated digit cards, supporting both countdown and current time modes. It provides smooth digit transitions using either flip or rotate animations.
 
-![MyFlipRotateTimer Widget](images/MyFlipRotateTimer.png)
+<!-- Using HTML to display the image -->
+<!-- Using the raw GitHub URL so pub.dev can load the image -->
+<img src="https://github.com/KSABBAS/Codeveloper_Tools_Package/blob/main/codeveloper_tools/images/MyFlipRotateTimer.png?raw=true "
+     alt="MyFlipRotateTimer Widget"
+     style="max-width:100%; border: 1px solid #ddd; padding: 4px; margin: 10px 0;" />
+
 
 ### Key Concepts:
 - **Display Modes:**  
