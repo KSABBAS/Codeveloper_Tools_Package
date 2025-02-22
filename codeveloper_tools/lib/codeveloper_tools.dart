@@ -1,5 +1,4 @@
 // lib/codeveloper_tools.dart
-library codeveloper_tools;
 
 // --------------- Functions Folder ---------------
 
