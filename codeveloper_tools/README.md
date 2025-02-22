@@ -5,7 +5,7 @@
 ## Key Features ✨
 
 - **Custom Navigation Bars:**  
-  Pre-built widgets like `NavBar` and `PageViewNavBar` for seamless app navigation.
+  Pre-built widgets like `PopUps` and `Timers and Media Tools` for seamless app navigation.
 
 - **Media & Picker Tools:**  
   Easily integrate file and image pickers along with responsive design helpers.
@@ -36,7 +36,7 @@ Add Codeveloper Tools to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  codeveloper_tools: ^0.0.1
+  codeveloper_tools: ^0.0.8
 ```
 
 ## YouTube Channel
