@@ -21,3 +21,16 @@
   - Minor formatting fixes across documentation.
 - **Miscellaneous:**
   - General cleanup and minor code documentation updates.
+
+# 0.0.7 
+
+- **README.md Improvements:**
+  - Added a dedicated "Watch & Learn" section with emojis that emphasizes the [KS_ABBAS YouTube Channel](https://www.youtube.com/@KS_ABBAS), where each tool is explained in detail.
+  - Enhanced overall formatting and clarity.
+
+- **Documentation Enhancements:**
+  - Updated package descriptions and installation instructions.
+  - Improved usage examples for better clarity.
+
+- **Minor Fixes:**
+  - General code and documentation formatting improvements.
