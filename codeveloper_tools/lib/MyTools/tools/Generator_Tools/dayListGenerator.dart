@@ -107,7 +107,7 @@ class MyAutoDateDisplayer extends StatefulWidget {
   final ValueChanged<int>? onSelectedIndexChanged;
 
   const MyAutoDateDisplayer({
-    Key? key,
+    super.key,
     this.daysBefore = 3,
     this.daysAfter = 10,
     this.orientation = DateDisplayOrientation.horizontal,
@@ -143,7 +143,7 @@ class MyAutoDateDisplayer extends StatefulWidget {
     this.selectorBorderColor = Colors.green,
     this.selectorBorderRadius,
     this.onSelectedIndexChanged,
-  }) : super(key: key);
+  });
 
   @override
   _MyAutoDateDisplayerState createState() => _MyAutoDateDisplayerState();

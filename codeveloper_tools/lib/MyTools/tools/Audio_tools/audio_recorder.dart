@@ -118,10 +118,8 @@ class _SoundRecorderState extends State<SoundRecorder> {
         widget.onRecordingStart?.call();
 
         _recorderSubscription = _recorder.onProgress?.listen((progress) {
-          if (progress != null) {
-            widget.onRecordingProgress?.call(progress.duration);
-          }
-        });
+          widget.onRecordingProgress?.call(progress.duration);
+                });
       } else {
         debugPrint("Microphone permission denied.");
       }

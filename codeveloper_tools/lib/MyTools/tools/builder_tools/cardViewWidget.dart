@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 
 class MyDottedCardViewer extends StatefulWidget {
@@ -56,7 +55,7 @@ class MyDottedCardViewer extends StatefulWidget {
   final ValueChanged<int>? onCardPressed;
 
   const MyDottedCardViewer({
-    Key? key,
+    super.key,
     required this.itemCount,
     required this.builder,
     this.selectedDotWidth = 14.0,
@@ -90,7 +89,7 @@ class MyDottedCardViewer extends StatefulWidget {
     this.overlayDotsPadding = const EdgeInsets.only(bottom: 16.0),
     this.onPageChanged,
     this.onCardPressed,
-  }) : super(key: key);
+  });
 
   @override
   _MyDottedCardViewerState createState() => _MyDottedCardViewerState();

@@ -196,7 +196,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
           ),
           // Body / Search Page portion:
           Expanded(
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               child: (inSearch)
                   ? _SearchPage(
@@ -230,8 +230,7 @@ class _SearchAppBarState extends State<SearchAppBar> {
 }
 
 class _SearchPage extends StatefulWidget {
-  _SearchPage({
-    super.key,
+  const _SearchPage({
     required this.childHeight,
     this.childWidth,
     this.childColor,
@@ -285,7 +284,7 @@ class __SearchPageState extends State<_SearchPage> {
           if (widget.SubAppBarVisible ?? false)
             Padding(padding: EdgeInsets.only(top: widget.columnSpaces ?? 20)),
           if (widget.SubAppBarVisible ?? false)
-            Container(
+            SizedBox(
               width: double.infinity,
               child: Row(
                 children: [

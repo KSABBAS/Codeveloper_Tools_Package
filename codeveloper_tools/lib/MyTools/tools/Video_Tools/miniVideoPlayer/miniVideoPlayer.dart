@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:video_player/video_player.dart';
 
 /// A customizable mini video player.
@@ -53,7 +52,7 @@ class MyMiniVideoPlayer extends StatefulWidget {
   final bool disposeController;
 
   const MyMiniVideoPlayer({
-    Key? key,
+    super.key,
     required this.videoSource,
     this.isAsset = false,
     this.qualitySources,
@@ -86,7 +85,7 @@ class MyMiniVideoPlayer extends StatefulWidget {
     // External controller:
     this.externalController,
     this.disposeController = true,
-  }) : super(key: key);
+  });
 
   @override
   _MyMiniVideoPlayerState createState() => _MyMiniVideoPlayerState();

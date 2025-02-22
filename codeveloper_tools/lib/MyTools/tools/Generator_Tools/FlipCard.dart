@@ -25,7 +25,7 @@ class MyFlipperWidget extends StatefulWidget {
   final ValueChanged<int>? onTap;
 
   const MyFlipperWidget({
-    Key? key,
+    super.key,
     required this.front,
     required this.back,
     this.widgetList,
@@ -44,8 +44,7 @@ class MyFlipperWidget extends StatefulWidget {
               ? (widgetList != null && widgetList.length > 0)
               : true,
           'For loop mode, widgetList must be provided and non-empty.',
-        ),
-        super(key: key);
+        );
 
   @override
   _MyFlipperWidgetState createState() => _MyFlipperWidgetState();

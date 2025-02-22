@@ -21,7 +21,7 @@ import 'package:video_player/video_player.dart';
 // // works on : Android
 // // link type : direct mp4 link
 class ChewieVideoPlayer extends StatefulWidget {
-  ChewieVideoPlayer(
+  const ChewieVideoPlayer(
       {super.key, this.url, this.height, this.width, this.path, this.file});
 
   final double? height;

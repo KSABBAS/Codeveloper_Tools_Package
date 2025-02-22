@@ -111,7 +111,7 @@ class MyCircularCountdownTimer extends StatefulWidget {
   final double bottomOverlayHeight;
 
   const MyCircularCountdownTimer({
-    Key? key,
+    super.key,
     this.years = 0,
     this.months = 0,
     this.weeks = 0,
@@ -143,7 +143,7 @@ class MyCircularCountdownTimer extends StatefulWidget {
     this.controlButtonIconColor = Colors.black,
     this.controlButtonBorderRadius = 30,
     this.bottomOverlayHeight = 40,
-  }) : super(key: key);
+  });
 
   @override
   _MyCircularCountdownTimerState createState() => _MyCircularCountdownTimerState();

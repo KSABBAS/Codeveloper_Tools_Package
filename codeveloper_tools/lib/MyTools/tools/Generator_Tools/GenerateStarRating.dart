@@ -64,7 +64,7 @@ class StarRatingDisplay extends StatefulWidget {
   final BoxDecoration? decoration;
 
   const StarRatingDisplay({
-    Key? key,
+    super.key,
     this.starCount = 5,
     required this.rating,
     this.animationDuration = const Duration(milliseconds: 1000),
@@ -78,7 +78,7 @@ class StarRatingDisplay extends StatefulWidget {
     this.unselectedStrokeWidth = 2.0,
     this.starEdgeShape = StarEdgeShape.smooth,
     this.decoration,
-  }) : super(key: key);
+  });
 
   @override
   _StarRatingDisplayState createState() => _StarRatingDisplayState();

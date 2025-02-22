@@ -36,7 +36,7 @@ class MyMiniAudioPlayer extends StatefulWidget {
   final BoxShape? containerShape;
 
   const MyMiniAudioPlayer({
-    Key? key,
+    super.key,
     this.audioSource,
     this.isAsset = false,
     this.audioFile,
@@ -61,8 +61,7 @@ class MyMiniAudioPlayer extends StatefulWidget {
     this.containerClipBehavior,
     this.containerShape,
   })  : assert(audioFile != null || audioSource != null,
-            'Either audioFile or audioSource must be provided.'),
-        super(key: key);
+            'Either audioFile or audioSource must be provided.');
 
   @override
   _MyMiniAudioPlayerState createState() => _MyMiniAudioPlayerState();

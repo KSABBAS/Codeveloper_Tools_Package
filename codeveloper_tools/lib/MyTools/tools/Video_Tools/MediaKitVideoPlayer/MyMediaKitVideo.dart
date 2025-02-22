@@ -17,7 +17,7 @@ import 'package:media_kit_video/media_kit_video.dart';
 // // MediaKit.ensureInitialized();
 // // ==========================
 class MyMediaKitVideo extends StatefulWidget {
-  MyMediaKitVideo({
+  const MyMediaKitVideo({
     super.key,
     // required this.source,
   });

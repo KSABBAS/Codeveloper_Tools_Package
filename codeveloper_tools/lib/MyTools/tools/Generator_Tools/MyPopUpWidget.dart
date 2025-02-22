@@ -48,7 +48,7 @@ class MyPopupMenu extends StatefulWidget {
   final bool slideReverse;
 
   const MyPopupMenu({
-    Key? key,
+    super.key,
     required this.child,
     required this.builder,
     this.direction = PopupDirection.bottom,
@@ -65,7 +65,7 @@ class MyPopupMenu extends StatefulWidget {
     this.animationType = PopupAnimationType.fade,
     this.animationDuration = const Duration(milliseconds: 300),
     this.slideReverse = false,
-  }) : super(key: key);
+  });
 
   @override
   State<MyPopupMenu> createState() => _MyPopupMenuState();
@@ -148,7 +148,7 @@ class _MyPopupMenuState extends State<MyPopupMenu> {
       },
     );
 
-    Overlay.of(context)?.insert(_overlayEntry!);
+    Overlay.of(context).insert(_overlayEntry!);
   }
 
   Offset _calculatePopupPosition(Offset offset, Size targetSize) {
@@ -207,13 +207,13 @@ class AnimatedPopup extends StatefulWidget {
   final bool slideReverse;
 
   const AnimatedPopup({
-    Key? key,
+    super.key,
     required this.child,
     this.animationType = PopupAnimationType.fade,
     required this.direction,
     this.duration = const Duration(milliseconds: 300),
     this.slideReverse = false,
-  }) : super(key: key);
+  });
 
   @override
   _AnimatedPopupState createState() => _AnimatedPopupState();
@@ -308,7 +308,6 @@ class _PopupBubble extends StatelessWidget {
   final Widget child;
 
   const _PopupBubble({
-    Key? key,
     required this.width,
     required this.height,
     required this.color,
@@ -318,7 +317,7 @@ class _PopupBubble extends StatelessWidget {
     required this.direction,
     required this.child,
     this.boxShadow,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -86,10 +86,10 @@ class _SplashViewPageState extends State<SplashViewPage>
                         child: Opacity(
                       opacity: fading?.value,
                       child: Container(
-                        child: widget.child,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
+                        child: widget.child,
                       ),
                     )),
                   ],

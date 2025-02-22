@@ -20,11 +20,11 @@ class _DDButtonState extends State<DDButton> {
       for (int i = 0; i < values.length; i++) {
         list.add(
           DropdownMenuItem(
-            child: Text(values[i].toString()),
             value: values[i],
             onTap: () {
               indexChosen = i;
             },
+            child: Text(values[i].toString()),
           ),
         );
       }

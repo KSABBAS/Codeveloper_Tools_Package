@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
@@ -39,7 +38,7 @@ class MyMiniOnTheRightImageViewer extends StatefulWidget {
   final ValueChanged<int>? onImagePressed;
 
   const MyMiniOnTheRightImageViewer({
-    Key? key,
+    super.key,
     required this.images,
     this.imageFit = BoxFit.cover,
     this.viewportFraction = 0.8,
@@ -57,7 +56,7 @@ class MyMiniOnTheRightImageViewer extends StatefulWidget {
     this.autoScrollCurve = Curves.easeInOut,
     this.onPageChanged,
     this.onImagePressed,
-  }) : super(key: key);
+  });
 
   @override
   _MyMiniOnTheRightImageViewerState createState() => _MyMiniOnTheRightImageViewerState();

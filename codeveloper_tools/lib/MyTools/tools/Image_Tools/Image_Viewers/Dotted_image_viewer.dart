@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'dart:math';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
@@ -61,7 +59,7 @@ class MyDottedImageViewer extends StatefulWidget {
   final ValueChanged<int>? onImagePressed;
 
   const MyDottedImageViewer({
-    Key? key,
+    super.key,
     required this.images,
     this.imageFit = BoxFit.cover,
     this.selectedDotWidth = 14.0,
@@ -95,7 +93,7 @@ class MyDottedImageViewer extends StatefulWidget {
     this.overlayDotsPadding = const EdgeInsets.only(bottom: 16.0),
     this.onPageChanged,
     this.onImagePressed,
-  }) : super(key: key);
+  });
 
   @override
   _MyDottedImageViewerState createState() => _MyDottedImageViewerState();

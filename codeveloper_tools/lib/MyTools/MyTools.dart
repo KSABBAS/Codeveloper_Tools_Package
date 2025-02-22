@@ -1,14 +1,7 @@
 // import 'package:chewie/chewie.dart';
 // import 'package:chewie/chewie.dart';
 // import 'package:insta_image_viewer/insta_image_viewer.dart';
-import 'dart:async';
-import 'dart:io';
-import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:insta_image_viewer/insta_image_viewer.dart';
-import 'package:video_player/video_player.dart';
 
 //----------------------------------------------------------
 

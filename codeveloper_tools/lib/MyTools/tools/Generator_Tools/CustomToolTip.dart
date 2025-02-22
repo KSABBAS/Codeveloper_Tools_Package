@@ -62,7 +62,7 @@ class MyTooltip extends StatefulWidget {
   final bool showOnLongPress;
 
   const MyTooltip({
-    Key? key,
+    super.key,
     required this.child,
     required this.tooltipContent,
     this.tooltipPosition = TooltipPositionExtended.bottomCenter,
@@ -84,7 +84,7 @@ class MyTooltip extends StatefulWidget {
     this.autoHideDelay = const Duration(seconds: 3),
     this.showOnHover = true,
     this.showOnLongPress = true,
-  }) : super(key: key);
+  });
 
   @override
   _MyTooltipState createState() => _MyTooltipState();
@@ -112,7 +112,7 @@ class _MyTooltipState extends State<MyTooltip>
   void _showTooltip() {
     _removeTooltip();
     _overlayEntry = _createOverlayEntry();
-    Overlay.of(context)!.insert(_overlayEntry!);
+    Overlay.of(context).insert(_overlayEntry!);
     _controller.forward();
 
     // Schedule auto-hide if autoHideDelay is not Duration.zero.

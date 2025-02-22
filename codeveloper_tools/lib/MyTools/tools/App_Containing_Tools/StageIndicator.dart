@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 /// Enum to control where the navigation bar is placed relative to the page.
@@ -84,7 +82,7 @@ class StageProgressNavigator extends StatefulWidget {
   final EdgeInsets navigationBarPadding;
 
   const StageProgressNavigator({
-    Key? key,
+    super.key,
     required this.pages,
     this.orientation = StageProgressOrientation.horizontal,
     this.transitionType = TransitionType.fade,
@@ -107,7 +105,7 @@ class StageProgressNavigator extends StatefulWidget {
     this.navigationBarHeight = 132.0,
     this.navigationBarWidth = 150.0,
     this.navigationBarPadding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   @override
   _StageProgressNavigatorState createState() => _StageProgressNavigatorState();
@@ -241,7 +239,7 @@ class _StageProgressNavigatorState extends State<StageProgressNavigator> {
           );
         }
       },
-      child: Container(
+      child: SizedBox(
         key: ValueKey<int>(_currentStage),
         width: double.infinity,
         height: double.infinity,

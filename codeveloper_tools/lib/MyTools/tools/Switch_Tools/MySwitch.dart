@@ -84,13 +84,13 @@ class _MySwitchState extends State<MySwitch> {
                     alignment:
                         (state) ? Alignment.centerRight : Alignment.centerLeft,
                     child: CMaker(
-                        child: (state) ? widget.ONIconBall : widget.OffIconBall,
                         margin: EdgeInsets.only(bottom: 5),
                         circularRadius: 500,
                         height: 35,
                         width: 35,
                         color:
-                            (state) ? widget.BallColorOn : widget.BallColorOff),
+                            (state) ? widget.BallColorOn : widget.BallColorOff,
+                        child: (state) ? widget.ONIconBall : widget.OffIconBall),
                   ),
                 ],
               )),

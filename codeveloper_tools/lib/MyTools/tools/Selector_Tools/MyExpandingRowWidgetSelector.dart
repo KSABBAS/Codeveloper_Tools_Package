@@ -3,7 +3,7 @@ import 'package:codeveloper_tools/MyTools/tools/CMaker_Tools/CMaker.dart';
 import 'package:flutter/material.dart';
 
 class MyExpandingRowWidgetSelector extends StatefulWidget {
-  MyExpandingRowWidgetSelector({
+  const MyExpandingRowWidgetSelector({
     super.key,
     required this.iconsList,
     required this.height, // Only specify height, width will be dynamic

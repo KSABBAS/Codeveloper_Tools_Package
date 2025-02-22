@@ -20,7 +20,7 @@ import 'package:video_player/video_player.dart';
 // import 'package:video_player/video_player.dart';
 
 class MyVideoPlayer extends StatefulWidget {
-  MyVideoPlayer({
+  const MyVideoPlayer({
     super.key,
     this.url,
     this.height,
@@ -465,7 +465,7 @@ class __ControlsState extends State<_Controls> {
 
 class _VideoPlayer extends StatelessWidget {
   final VideoPlayerController controller;
-  _VideoPlayer({required this.controller});
+  const _VideoPlayer({required this.controller});
 
   @override
   Widget build(BuildContext context) {

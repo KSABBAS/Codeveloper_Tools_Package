@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 class MyMiniOnTheRightCardViewer extends StatefulWidget {
@@ -47,7 +46,7 @@ class MyMiniOnTheRightCardViewer extends StatefulWidget {
   final ValueChanged<int>? onCardPressed;
 
   const MyMiniOnTheRightCardViewer({
-    Key? key,
+    super.key,
     required this.itemCount,
     required this.builder,
     this.viewportFraction = 0.8,
@@ -67,7 +66,7 @@ class MyMiniOnTheRightCardViewer extends StatefulWidget {
     this.toggleDotsOnTap = false,
     this.onPageChanged,
     this.onCardPressed,
-  }) : super(key: key);
+  });
 
   @override
   _MyMiniOnTheRightCardViewerState createState() => _MyMiniOnTheRightCardViewerState();

@@ -108,7 +108,7 @@ class MyFlipRotateTimer extends StatefulWidget {
   final BoxDecoration? cardDecoration;
 
   const MyFlipRotateTimer({
-    Key? key,
+    super.key,
     this.displayMode = DisplayMode.countdown,
     this.initialDuration = const Duration(seconds: 60),
     this.animationMode = AnimationMode.flip,
@@ -127,7 +127,7 @@ class MyFlipRotateTimer extends StatefulWidget {
     this.onAmPmFlip,
     this.customTime,
     this.cardDecoration,
-  }) : super(key: key);
+  });
 
   @override
   _MyFlipRotateTimerState createState() => _MyFlipRotateTimerState();
@@ -333,16 +333,14 @@ class _FlipRotateCardDigit extends StatefulWidget {
   final BoxDecoration? decoration;
 
   const _FlipRotateCardDigit({
-    Key? key,
     required this.digit,
     required this.textStyle,
     this.width = 40,
     this.height = 60,
-    this.cardColor = const Color(0xFF333333),
     this.duration = const Duration(milliseconds: 600),
     this.mode = AnimationMode.flip,
     this.decoration,
-  }) : super(key: key);
+  });
 
   @override
   State<_FlipRotateCardDigit> createState() => __FlipRotateCardDigitState();

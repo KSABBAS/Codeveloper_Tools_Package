@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class DistributiveGView extends StatelessWidget {
-  DistributiveGView(
-      {required this.itemCount,
+  const DistributiveGView(
+      {super.key, required this.itemCount,
       required this.itemBuilder,
       required this.itemHeight,
       required this.itemWidth,

@@ -1,14 +1,13 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 class MyFloatingIcon extends StatelessWidget {
   final Widget body;
   final Widget floatingWidget;
   
   const MyFloatingIcon({
-    Key? key,
+    super.key,
     required this.body,
     required this.floatingWidget,
-  }) : super(key: key);
+  });
   
   @override
   Widget build(BuildContext context) {
@@ -98,7 +97,7 @@ class DraggableFloatingMenu extends StatefulWidget {
   final BoxDecoration? menuItemDecoration;
   
   const DraggableFloatingMenu({
-    Key? key,
+    super.key,
     required this.itemCount,
     required this.itemBuilder,
     this.initialPosition = const Offset(20, 100),
@@ -117,7 +116,7 @@ class DraggableFloatingMenu extends StatefulWidget {
     this.menuItemAlignment,
     this.menuItemSpacing,
     this.menuItemDecoration,
-  }) : super(key: key);
+  });
   
   @override
   _DraggableFloatingMenuState createState() => _DraggableFloatingMenuState();

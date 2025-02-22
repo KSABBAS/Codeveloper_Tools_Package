@@ -121,9 +121,6 @@ class _MySwitchBuilderState extends State<MySwitchTitleBuilder> {
                                     ? Alignment.centerRight
                                     : Alignment.centerLeft,
                                 child: CMaker(
-                                  child: (widget.dataList[index][1])
-                                      ? widget.ONIconBall
-                                      : widget.OffIconBall,
                                   margin: EdgeInsets.only(bottom: 8),
                                   color: (widget.dataList[index][1])
                                       ? widget.BallColorOn
@@ -131,6 +128,9 @@ class _MySwitchBuilderState extends State<MySwitchTitleBuilder> {
                                   circularRadius: 500,
                                   height: 35,
                                   width: 35,
+                                  child: (widget.dataList[index][1])
+                                      ? widget.ONIconBall
+                                      : widget.OffIconBall,
                                 ),
                               ),
                             ],
