@@ -57,7 +57,7 @@ Below is an explanation of the `MyFlipRotateTimer` widget. This widget displays 
 <!-- Using the raw GitHub URL so pub.dev can load the image -->
 <img src="https://github.com/KSABBAS/Codeveloper_Tools_Package/blob/main/codeveloper_tools/images/MyFlipRotateTimer.png?raw=true "
      alt="MyFlipRotateTimer Widget"
-     style="max-width:100%; border: 1px solid #ddd; padding: 4px; margin: 10px 0;" />
+     style="max-width:100%; padding: 4px; margin: 10px 0;" />
 
 
 ### Key Concepts:
