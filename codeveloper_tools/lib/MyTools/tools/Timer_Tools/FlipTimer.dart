@@ -327,7 +327,7 @@ class _FlipRotateCardDigit extends StatefulWidget {
   final TextStyle textStyle;
   final double width;
   final double height;
-  final Color cardColor;
+  final Color cardColor = Colors.black;
   final Duration duration;
   final AnimationMode mode;
   final BoxDecoration? decoration;
