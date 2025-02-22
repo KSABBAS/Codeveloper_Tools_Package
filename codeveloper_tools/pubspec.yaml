@@ -1,6 +1,6 @@
 name: codeveloper_tools
 description: "A suite of Flutter UI tools by Codeveloper, featuring custom widgets, media pickers , bars , and more to speed up app development."
-version: 0.0.8
+version: 0.0.9
 repository: https://github.com/KSABBAS/Codeveloper_Tools_Package
 homepage: https://codeveloper.online
 
@@ -57,8 +57,8 @@ flutter:
         pluginClass: CodeveloperToolsPlugin
 
   # Uncomment and configure the assets/fonts sections if needed.
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - images/
   #   - images/a_dot_ham.jpeg
   #
   # fonts:
