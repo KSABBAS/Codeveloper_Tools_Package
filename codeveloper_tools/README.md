@@ -36,7 +36,7 @@ Add Codeveloper Tools to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  codeveloper_tools: ^0.0.9
+  codeveloper_tools: ^0.0.10
 ```
 
 ## YouTube Channel
@@ -53,7 +53,7 @@ https://www.youtube.com/@KS_ABBAS
 
 Below is an explanation of the `MyFlipRotateTimer` widget. This widget displays a timer using animated digit cards, supporting both countdown and current time modes. It provides smooth digit transitions using either flip or rotate animations.
 
-![MyFlipRotateTimer Widget](MyFlipRotateTimer.png)
+![MyFlipRotateTimer Widget](images/MyFlipRotateTimer.png)
 
 ### Key Concepts:
 - **Display Modes:**  
@@ -74,7 +74,7 @@ Below is an example of how you might integrate and use `MyFlipRotateTimer` in yo
 ```dart
 import 'package:flutter/material.dart';
 // Import your Codeveloper Tools package (adjust the path as needed).
-import 'package:codeveloper_tools/codeveloper_tools.dart';
+import 'package:codeveloper_tools/codeveloper_tools.dart'; 
 
 void main() => runApp(FlipRotateTimerExampleApp());
 
@@ -135,14 +135,14 @@ class _FlipRotateTimerExamplePageState extends State<FlipRotateTimerExamplePage>
                   ),
                 ],
               ),
+              // Callback invoked when the countdown completes.
               onComplete: () {
-                // When the countdown completes, update the status.
                 setState(() {
                   _status = "Countdown Complete!";
                 });
               },
+              // Callback for each flip of the seconds digit.
               onSecondFlip: (timeEvent) {
-                // Print a message each time the seconds digit flips.
                 print("Second flipped: $timeEvent");
               },
               onMinuteFlip: (timeEvent) {
