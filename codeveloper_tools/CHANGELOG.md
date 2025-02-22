@@ -8,3 +8,16 @@
 - Updated `README.md` with more detailed descriptions and usage examples.
 - Switched to an OSI-approved MIT License to improve pub.dev scoring.
 - Various minor improvements and file renaming for Dart style compliance.
+
+# 0.0.6 
+
+- **Enhanced README.md:**
+  - Expanded the package overview with detailed descriptions of key features and benefits.
+  - Improved installation and usage instructions with code examples.
+  - Added a dedicated section highlighting the [KS_ABBAS YouTube Channel](https://www.youtube.com/@KS_ABBAS) for video tutorials and demos.
+  - Included emojis to create a more engaging and user-friendly presentation.
+- **Documentation Improvements:**
+  - Updated package description in `pubspec.yaml` for clarity.
+  - Minor formatting fixes across documentation.
+- **Miscellaneous:**
+  - General cleanup and minor code documentation updates.
