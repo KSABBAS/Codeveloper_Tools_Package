@@ -49,170 +49,119 @@ https://www.youtube.com/@KS_ABBAS
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Show Code Example</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    h2 {
-      color: #444;
-    }
-    /* Styling for the code container */
-    .code-container {
-      display: none; /* Hidden by default */
-      position: relative; /* Establish relative positioning for floating buttons */
-      height: 400px;
-      overflow-y: auto;
-      background-color: #2d2d2d;
-      color: #f8f8f2;
-      border: 1px solid #444;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      white-space: pre;
-      font-family: Consolas, monospace;
-      font-size: 14px;
-    }
-    /* Custom scrollbar styling for webkit browsers */
-    .code-container::-webkit-scrollbar {
-      width: 10px;
-    }
-    .code-container::-webkit-scrollbar-track {
-      background: #1e1e1e;
-      border-radius: 8px;
-    }
-    .code-container::-webkit-scrollbar-thumb {
-      background: #555;
-      border-radius: 8px;
-    }
-    /* Floating button container positioned in the top-right corner of the code container */
-    .floating-buttons {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-    }
-    .floating-buttons button {
-      padding: 6px 12px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-      background-color: #007acc;
-      color: #fff;
-      transition: background-color 0.3s ease;
-    }
-    .floating-buttons button:hover {
-      background-color: #005ea6;
-    }
-    /* Style for the "Show Code" button outside the container */
-    #showButton {
-      padding: 8px 16px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-      background-color: #007acc;
-      color: #fff;
-      transition: background-color 0.3s ease;
-    }
-    #showButton:hover {
-      background-color: #005ea6;
-    }
-  </style>
-</head>
-<body>
-  <h2>MyFlipRotateTimer Widget Code</h2>
-  <!-- Show Code button -->
-  <button id="showButton">Show Code</button>
-  
-  <!-- The code container (initially hidden) -->
-  <div id="codeContainer" class="code-container">
-    <!-- Floating buttons container -->
-    <div class="floating-buttons">
-      <button id="copyButton">Copy Code</button>
-      <button id="hideButton">Hide Code</button>
-    </div>
-    <code id="codeBlock">
-// Example code for MyFlipRotateTimer widget:
+## MyFlipRotateTimer Widget Explained 🔄
 
+Below is an explanation of the `MyFlipRotateTimer` widget. This widget displays a timer using animated digit cards, supporting both countdown and current time modes. It provides smooth digit transitions using either flip or rotate animations.
+
+<!-- Using HTML to display the image -->
+<!-- Using the raw GitHub URL so pub.dev can load the image -->
+<img src="https://github.com/KSABBAS/Codeveloper_Tools_Package/blob/main/codeveloper_tools/images/MyFlipRotateTimer.png?raw=true "
+     alt="MyFlipRotateTimer Widget"
+     style="max-width:100%; padding: 4px; margin: 10px 0;" />
+
+
+### Key Concepts:
+- **Display Modes:**  
+  - `DisplayMode.countdown`: Shows a countdown timer based on an initial duration.  
+  - `DisplayMode.current12h` and `DisplayMode.current24h`: Display the current time in 12-hour (with AM/PM) or 24-hour format.
+  
+- **Animation Modes:**  
+  - `AnimationMode.flip`: Uses a flip animation (like a flip clock).  
+  - `AnimationMode.rotate`: Uses a rotate animation with sliding transitions.
+
+- **Callbacks:**  
+  Callback functions such as `onSecondFlip`, `onMinuteFlip`, `onHourFlip`, and `onAmPmFlip` allow you to react to each digit change.
+
+### Annotated Example
+
+Below is an example of how you might integrate and use `MyFlipRotateTimer` in your Flutter app:
+
+```dart
 import 'package:flutter/material.dart';
+// Import your Codeveloper Tools package (adjust the path as needed).
 import 'package:codeveloper_tools/codeveloper_tools.dart'; 
 
 void main() => runApp(FlipRotateTimerExampleApp());
 
+/// The root widget of our example application.
 class FlipRotateTimerExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MyFlipRotateTimer Example',
+      title: 'MyFlipRotateTimer Example', // App title.
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: FlipRotateTimerExamplePage(),
+      home: FlipRotateTimerExamplePage(), // Main page of the app.
     );
   }
 }
 
+/// A stateful widget that demonstrates the usage of MyFlipRotateTimer.
 class FlipRotateTimerExamplePage extends StatefulWidget {
   @override
   _FlipRotateTimerExamplePageState createState() => _FlipRotateTimerExamplePageState();
 }
 
+/// The state class for FlipRotateTimerExamplePage.
 class _FlipRotateTimerExamplePageState extends State<FlipRotateTimerExamplePage> {
+  // Holds the status text to display below the timer.
   String _status = "Timer Running...";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flip Rotate Timer Example'),
+        title: Text('Flip Rotate Timer Example'), // AppBar title.
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // MyFlipRotateTimer widget configured in countdown mode.
             MyFlipRotateTimer(
-              displayMode: DisplayMode.countdown,
-              initialDuration: Duration(seconds: 10),
-              animationMode: AnimationMode.flip,
+              displayMode: DisplayMode.countdown, // Use countdown mode.
+              initialDuration: Duration(seconds: 10), // Set a 10-second countdown.
+              animationMode: AnimationMode.flip, // Use flip animation.
               digitTextStyle: TextStyle(
-                fontSize: 32,
+                fontSize: 32,           // Digit font size.
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.white,    // White text color.
               ),
-              cardWidth: 50,
-              cardHeight: 70,
-              digitAnimDuration: Duration(milliseconds: 800),
+              cardWidth: 50,            // Width of each digit card.
+              cardHeight: 70,           // Height of each digit card.
+              digitAnimDuration: Duration(milliseconds: 800), // Duration of the flip animation.
               cardDecoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(8),
+                color: Colors.black,    // Card background color.
+                borderRadius: BorderRadius.circular(8), // Rounded corners.
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 4,
-                    offset: Offset(0, 2),
+                    color: Colors.black26, // Shadow color.
+                    blurRadius: 4,         // Blur radius.
+                    offset: Offset(0, 2),   // Shadow offset.
                   ),
                 ],
               ),
+              // Callback invoked when the countdown completes.
               onComplete: () {
                 setState(() {
                   _status = "Countdown Complete!";
                 });
               },
-              onSecondFlip: (timeEvent) { print("Second flipped: $timeEvent"); },
-              onMinuteFlip: (timeEvent) { print("Minute flipped: $timeEvent"); },
-              onHourFlip: (timeEvent) { print("Hour flipped: $timeEvent"); },
-              onAmPmFlip: (timeEvent) { print("AM/PM flipped: $timeEvent"); },
+              // Callback for each flip of the seconds digit.
+              onSecondFlip: (timeEvent) {
+                print("Second flipped: $timeEvent");
+              },
+              onMinuteFlip: (timeEvent) {
+                print("Minute flipped: $timeEvent");
+              },
+              onHourFlip: (timeEvent) {
+                print("Hour flipped: $timeEvent");
+              },
+              onAmPmFlip: (timeEvent) {
+                print("AM/PM flipped: $timeEvent");
+              },
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20), // Add space below the timer.
+            // Display the current status below the timer.
             Text(
               _status,
               style: TextStyle(fontSize: 20),
@@ -223,43 +172,139 @@ class _FlipRotateTimerExamplePageState extends State<FlipRotateTimerExamplePage>
     );
   }
 }
-    </code>
-  </div>
-  
-  <script>
-    // Get DOM elements
-    const showButton = document.getElementById('showButton');
-    const hideButton = document.getElementById('hideButton');
-    const codeContainer = document.getElementById('codeContainer');
-    const copyButton = document.getElementById('copyButton');
-    const codeBlock = document.getElementById('codeBlock');
-    
-    // Show the code container when "Show Code" is clicked.
-    showButton.addEventListener('click', function() {
-      codeContainer.style.display = 'block';
-      showButton.style.display = 'none';
-    });
-    
-    // Hide the code container when "Hide Code" is clicked.
-    hideButton.addEventListener('click', function() {
-      codeContainer.style.display = 'none';
-      showButton.style.display = 'inline-block';
-    });
-    
-    // Copy code to clipboard when "Copy Code" is clicked.
-    copyButton.addEventListener('click', function() {
-      const textarea = document.createElement('textarea');
-      textarea.value = codeBlock.innerText;
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        alert('Code copied to clipboard!');
-      } catch (err) {
-        alert('Failed to copy code.');
-      }
-      document.body.removeChild(textarea);
-    });
-  </script>
-</body>
-</html>
+```
+
+# Video Documentation
+
+## MyFlipRotateTimer
+**MyFlipRotateTimer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/mjQVpvg4gYA/0.jpg)](https://www.youtube.com/watch?v=mjQVpvg4gYA)
+
+## MyCircularCountdownTimer
+**MyCircularCountdownTimer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/HZFUPTWccag/0.jpg)](https://www.youtube.com/watch?v=HZFUPTWccag&t=1s)
+
+## MyTooltip
+**MyTooltip explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/N-T_f8Llny4/0.jpg)](https://www.youtube.com/watch?v=N-T_f8Llny4)
+
+## How To Use Codeveloper Tools ( MyTools )
+**How To Use Codeveloper Tools ( MyTools ) explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/bajAFMjqrjM/0.jpg)](https://www.youtube.com/watch?v=bajAFMjqrjM)
+
+## MyFlipperWidget
+**MyFlipperWidget explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/8JRwOPM5B7o/0.jpg)](https://www.youtube.com/watch?v=8JRwOPM5B7o)
+
+## MyPopupMenu
+**MyPopupMenu explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/i9tinoxARq0/0.jpg)](https://www.youtube.com/watch?v=i9tinoxARq0)
+
+## AutoDateDisplayer
+**AutoDateDisplayer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/dMTZ7aLaD-s/0.jpg)](https://www.youtube.com/watch?v=dMTZ7aLaD-s)
+
+## StarRating
+**StarRating explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/cVTJMPjmXe8/0.jpg)](https://www.youtube.com/watch?v=cVTJMPjmXe8&t=9s)
+
+## StageProgressNavigator
+**StageProgressNavigator explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/QyLez_VMPT4/0.jpg)](https://www.youtube.com/watch?v=QyLez_VMPT4)
+
+## MyDottedCardViewer and MyMiniOnTheRightCardViewer
+**MyDottedCardViewer and MyMiniOnTheRightCardViewer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/KnUcq59iDn0/0.jpg)](https://www.youtube.com/watch?v=KnUcq59iDn0)
+
+## MyMiniOnTheRightImageViewer
+**MyMiniOnTheRightImageViewer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/-uAwH3x0MSI/0.jpg)](https://www.youtube.com/watch?v=-uAwH3x0MSI)
+
+## MyDottedImageViewer
+**MyDottedImageViewer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/zNGNOD9PZgE/0.jpg)](https://www.youtube.com/watch?v=zNGNOD9PZgE)
+
+## SoundRecorder
+**SoundRecorder explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/iNd5jF48rG8/0.jpg)](https://www.youtube.com/watch?v=iNd5jF48rG8)
+
+## CustomVideoPlayer
+**CustomVideoPlayer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/EI4KzHshdiE/0.jpg)](https://www.youtube.com/watch?v=EI4KzHshdiE)
+
+## AudioPlayerWidget
+**AudioPlayerWidget explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/jKp-J2wnyus/0.jpg)](https://www.youtube.com/watch?v=jKp-J2wnyus)
+
+## PercentageCirclePainter
+**PercentageCirclePainter explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/Igx5omF-Vus/0.jpg)](https://www.youtube.com/watch?v=Igx5omF-Vus)
+
+## WidgetListBuilder
+**WidgetListBuilder explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/sybPlJAvmS0/0.jpg)](https://www.youtube.com/watch?v=sybPlJAvmS0)
+
+## MyResponsive
+**MyResponsive explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/8weZ_FZ1GMI/0.jpg)](https://www.youtube.com/watch?v=8weZ_FZ1GMI)
+
+## ResponsiveHeight and ResponsiveWidth
+**ResponsiveHeight and ResponsiveWidth explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/XdQdukCLDw8/0.jpg)](https://www.youtube.com/watch?v=XdQdukCLDw8)
+
+## PageHeight(context) and PageWidth(context)
+**PageHeight(context) and PageWidth(context) explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/8n6__hCPLug/0.jpg)](https://www.youtube.com/watch?v=8n6__hCPLug)
+
+## ClickToOpenImageViwer
+**ClickToOpenImageViwer explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/ChOfxo43HVQ/0.jpg)](https://www.youtube.com/watch?v=ChOfxo43HVQ)
+
+## scanQRWidget
+**scanQRWidget explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/36_Cwi3vk30/0.jpg)](https://www.youtube.com/watch?v=36_Cwi3vk30)
+
+## generateQRCode
+**generateQRCode explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/uqzuHbnoCNs/0.jpg)](https://www.youtube.com/watch?v=uqzuHbnoCNs)
+
+## MyExpandingColumnWidgetSelector and MyExpandingRowWidgetSelector
+**MyExpandingColumnWidgetSelector and MyExpandingRowWidgetSelector explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/iEqPO4asal8/0.jpg)](https://www.youtube.com/watch?v=iEqPO4asal8)
+
+## MyColumnWidgetSelector and MyRowWidgetSelector part 2
+**MyColumnWidgetSelector and MyRowWidgetSelector part 2 explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/-IXbtna8cbQ/0.jpg)](https://www.youtube.com/watch?v=-IXbtna8cbQ)
+
+## MyColumnWidgetSelector and MyRowWidgetSelector
+**MyColumnWidgetSelector and MyRowWidgetSelector explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/BPOjlYMWvDg/0.jpg)](https://www.youtube.com/watch?v=BPOjlYMWvDg)
+
+## MultiRButton
+**MultiRButton explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/Jr6U1hYyjeY/0.jpg)](https://www.youtube.com/watch?v=Jr6U1hYyjeY)
+
+## MultiCBox
+**MultiCBox explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/s94XVaoICMg/0.jpg)](https://www.youtube.com/watch?v=s94XVaoICMg)
+
+## WGridBuilder
+**WGridBuilder explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/qQP06gYCt2M/0.jpg)](https://www.youtube.com/watch?v=qQP06gYCt2M)
+
+## DistributiveGView
+**DistributiveGView explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/g_eoeJSTRWM/0.jpg)](https://www.youtube.com/watch?v=g_eoeJSTRWM)
+
+## MY Button
+**MY Button explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/9Bm-_1gcHK4/0.jpg)](https://www.youtube.com/watch?v=9Bm-_1gcHK4)
+
+## TMaker
+**TMaker explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/WqPksVZWFfs/0.jpg)](https://www.youtube.com/watch?v=WqPksVZWFfs)
+
+## CMaker tool
+**CMaker tool explanation and how to use it**  
+[![Watch Video](https://img.youtube.com/vi/xYT5Os8H_Po/0.jpg)](https://www.youtube.com/watch?v=xYT5Os8H_Po)
+
