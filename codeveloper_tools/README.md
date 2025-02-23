@@ -49,119 +49,170 @@ https://www.youtube.com/@KS_ABBAS
 
 
 
-## MyFlipRotateTimer Widget Explained 🔄
-
-Below is an explanation of the `MyFlipRotateTimer` widget. This widget displays a timer using animated digit cards, supporting both countdown and current time modes. It provides smooth digit transitions using either flip or rotate animations.
-
-<!-- Using HTML to display the image -->
-<!-- Using the raw GitHub URL so pub.dev can load the image -->
-<img src="https://github.com/KSABBAS/Codeveloper_Tools_Package/blob/main/codeveloper_tools/images/MyFlipRotateTimer.png?raw=true "
-     alt="MyFlipRotateTimer Widget"
-     style="max-width:100%; padding: 4px; margin: 10px 0;" />
-
-
-### Key Concepts:
-- **Display Modes:**  
-  - `DisplayMode.countdown`: Shows a countdown timer based on an initial duration.  
-  - `DisplayMode.current12h` and `DisplayMode.current24h`: Display the current time in 12-hour (with AM/PM) or 24-hour format.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show Code Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h2 {
+      color: #444;
+    }
+    /* Styling for the code container */
+    .code-container {
+      display: none; /* Hidden by default */
+      position: relative; /* Establish relative positioning for floating buttons */
+      height: 400px;
+      overflow-y: auto;
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      white-space: pre;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+    }
+    /* Custom scrollbar styling for webkit browsers */
+    .code-container::-webkit-scrollbar {
+      width: 10px;
+    }
+    .code-container::-webkit-scrollbar-track {
+      background: #1e1e1e;
+      border-radius: 8px;
+    }
+    .code-container::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 8px;
+    }
+    /* Floating button container positioned in the top-right corner of the code container */
+    .floating-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .floating-buttons button {
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #007acc;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    .floating-buttons button:hover {
+      background-color: #005ea6;
+    }
+    /* Style for the "Show Code" button outside the container */
+    #showButton {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #007acc;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    #showButton:hover {
+      background-color: #005ea6;
+    }
+  </style>
+</head>
+<body>
+  <h2>MyFlipRotateTimer Widget Code</h2>
+  <!-- Show Code button -->
+  <button id="showButton">Show Code</button>
   
-- **Animation Modes:**  
-  - `AnimationMode.flip`: Uses a flip animation (like a flip clock).  
-  - `AnimationMode.rotate`: Uses a rotate animation with sliding transitions.
+  <!-- The code container (initially hidden) -->
+  <div id="codeContainer" class="code-container">
+    <!-- Floating buttons container -->
+    <div class="floating-buttons">
+      <button id="copyButton">Copy Code</button>
+      <button id="hideButton">Hide Code</button>
+    </div>
+    <code id="codeBlock">
+// Example code for MyFlipRotateTimer widget:
 
-- **Callbacks:**  
-  Callback functions such as `onSecondFlip`, `onMinuteFlip`, `onHourFlip`, and `onAmPmFlip` allow you to react to each digit change.
-
-### Annotated Example
-
-Below is an example of how you might integrate and use `MyFlipRotateTimer` in your Flutter app:
-
-```dart
 import 'package:flutter/material.dart';
-// Import your Codeveloper Tools package (adjust the path as needed).
 import 'package:codeveloper_tools/codeveloper_tools.dart'; 
 
 void main() => runApp(FlipRotateTimerExampleApp());
 
-/// The root widget of our example application.
 class FlipRotateTimerExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MyFlipRotateTimer Example', // App title.
+      title: 'MyFlipRotateTimer Example',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: FlipRotateTimerExamplePage(), // Main page of the app.
+      home: FlipRotateTimerExamplePage(),
     );
   }
 }
 
-/// A stateful widget that demonstrates the usage of MyFlipRotateTimer.
 class FlipRotateTimerExamplePage extends StatefulWidget {
   @override
   _FlipRotateTimerExamplePageState createState() => _FlipRotateTimerExamplePageState();
 }
 
-/// The state class for FlipRotateTimerExamplePage.
 class _FlipRotateTimerExamplePageState extends State<FlipRotateTimerExamplePage> {
-  // Holds the status text to display below the timer.
   String _status = "Timer Running...";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flip Rotate Timer Example'), // AppBar title.
+        title: Text('Flip Rotate Timer Example'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // MyFlipRotateTimer widget configured in countdown mode.
             MyFlipRotateTimer(
-              displayMode: DisplayMode.countdown, // Use countdown mode.
-              initialDuration: Duration(seconds: 10), // Set a 10-second countdown.
-              animationMode: AnimationMode.flip, // Use flip animation.
+              displayMode: DisplayMode.countdown,
+              initialDuration: Duration(seconds: 10),
+              animationMode: AnimationMode.flip,
               digitTextStyle: TextStyle(
-                fontSize: 32,           // Digit font size.
+                fontSize: 32,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,    // White text color.
+                color: Colors.white,
               ),
-              cardWidth: 50,            // Width of each digit card.
-              cardHeight: 70,           // Height of each digit card.
-              digitAnimDuration: Duration(milliseconds: 800), // Duration of the flip animation.
+              cardWidth: 50,
+              cardHeight: 70,
+              digitAnimDuration: Duration(milliseconds: 800),
               cardDecoration: BoxDecoration(
-                color: Colors.black,    // Card background color.
-                borderRadius: BorderRadius.circular(8), // Rounded corners.
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black26, // Shadow color.
-                    blurRadius: 4,         // Blur radius.
-                    offset: Offset(0, 2),   // Shadow offset.
+                    color: Colors.black26,
+                    blurRadius: 4,
+                    offset: Offset(0, 2),
                   ),
                 ],
               ),
-              // Callback invoked when the countdown completes.
               onComplete: () {
                 setState(() {
                   _status = "Countdown Complete!";
                 });
               },
-              // Callback for each flip of the seconds digit.
-              onSecondFlip: (timeEvent) {
-                print("Second flipped: $timeEvent");
-              },
-              onMinuteFlip: (timeEvent) {
-                print("Minute flipped: $timeEvent");
-              },
-              onHourFlip: (timeEvent) {
-                print("Hour flipped: $timeEvent");
-              },
-              onAmPmFlip: (timeEvent) {
-                print("AM/PM flipped: $timeEvent");
-              },
+              onSecondFlip: (timeEvent) { print("Second flipped: $timeEvent"); },
+              onMinuteFlip: (timeEvent) { print("Minute flipped: $timeEvent"); },
+              onHourFlip: (timeEvent) { print("Hour flipped: $timeEvent"); },
+              onAmPmFlip: (timeEvent) { print("AM/PM flipped: $timeEvent"); },
             ),
-            SizedBox(height: 20), // Add space below the timer.
-            // Display the current status below the timer.
+            SizedBox(height: 20),
             Text(
               _status,
               style: TextStyle(fontSize: 20),
@@ -172,3 +223,43 @@ class _FlipRotateTimerExamplePageState extends State<FlipRotateTimerExamplePage>
     );
   }
 }
+    </code>
+  </div>
+  
+  <script>
+    // Get DOM elements
+    const showButton = document.getElementById('showButton');
+    const hideButton = document.getElementById('hideButton');
+    const codeContainer = document.getElementById('codeContainer');
+    const copyButton = document.getElementById('copyButton');
+    const codeBlock = document.getElementById('codeBlock');
+    
+    // Show the code container when "Show Code" is clicked.
+    showButton.addEventListener('click', function() {
+      codeContainer.style.display = 'block';
+      showButton.style.display = 'none';
+    });
+    
+    // Hide the code container when "Hide Code" is clicked.
+    hideButton.addEventListener('click', function() {
+      codeContainer.style.display = 'none';
+      showButton.style.display = 'inline-block';
+    });
+    
+    // Copy code to clipboard when "Copy Code" is clicked.
+    copyButton.addEventListener('click', function() {
+      const textarea = document.createElement('textarea');
+      textarea.value = codeBlock.innerText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        alert('Code copied to clipboard!');
+      } catch (err) {
+        alert('Failed to copy code.');
+      }
+      document.body.removeChild(textarea);
+    });
+  </script>
+</body>
+</html>
