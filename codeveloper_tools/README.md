@@ -1209,8 +1209,91 @@ class DottedImageViewerDemo extends StatelessWidget {
 ```
 
 ## SoundRecorder
-**SoundRecorder explanation and how to use it**  
+
+*SoundRecorder Explanation and How to Use It*
+
+SoundRecorder is an innovative widget designed to record audio with a simple tap interface. It toggles between recording and idle states, providing real-time recording progress via callbacks. Using the Flutter Sound package, SoundRecorder handles audio capture efficiently and supports full customization—from button colors and icon size to container decoration and icon color. This widget is perfect for integrating audio recording functionality into your Flutter apps with minimal setup.
+
+We explain every widget in detail on our YouTube channel—watch our step-by-step tutorials, live demos, and get in-depth explanations directly from Codeveloper.  
+Check out our channel here: [KS_ABBAS YouTube Channel](https://www.youtube.com/@KS_ABBAS).
+
 [![Watch Video](https://img.youtube.com/vi/iNd5jF48rG8/0.jpg)](https://www.youtube.com/watch?v=iNd5jF48rG8)
+
+## Example Code
+
+Below is an annotated example demonstrating how to integrate SoundRecorder into your Flutter app. Each part of the code is explained with inline comments to help you understand how the widget works.
+
+```dart
+// Import the necessary Flutter packages.
+import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter_sound/flutter_sound.dart';
+// Import your package containing SoundRecorder (adjust the import path as needed).
+import 'package:codeveloper_tools/codeveloper_tools.dart';
+
+void main() => runApp(const MyApp());
+
+/// MyApp is the root widget of the application.
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'SoundRecorder Demo',
+      home: const SoundRecorderDemo(),
+    );
+  }
+}
+
+/// SoundRecorderDemo demonstrates the usage of the SoundRecorder widget.
+class SoundRecorderDemo extends StatelessWidget {
+  const SoundRecorderDemo({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Sound Recorder')),
+      body: Center(
+        child: SoundRecorder(
+          // Customize the button appearance.
+          buttonColor: Colors.blue,
+          recordingColor: Colors.red,
+          iconSize: 40.0,
+          // Optionally customize the container wrapping the button.
+          containerDecoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 4,
+                offset: Offset(2, 2),
+              )
+            ],
+          ),
+          containerWidth: 100,
+          containerHeight: 100,
+          iconColor: Colors.white,
+          // Callback triggered when recording starts.
+          onRecordingStart: () {
+            print("Recording started");
+          },
+          // Callback triggered periodically during recording with the elapsed duration.
+          onRecordingProgress: (duration) {
+            print("Recording progress: $duration");
+          },
+          // Callback triggered when recording is complete.
+          onRecordingComplete: (audioFile) {
+            print("Recording complete. Audio file: $audioFile");
+          },
+        ),
+      ),
+    );
+  }
+}
+```
 
 ## CustomVideoPlayer
 **CustomVideoPlayer explanation and how to use it**  
