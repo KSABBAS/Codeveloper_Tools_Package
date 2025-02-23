@@ -36,7 +36,7 @@ Add Codeveloper Tools to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  codeveloper_tools: ^0.0.12
+  codeveloper_tools: ^0.0.13
 ```
 
 ## YouTube Channel
@@ -49,130 +49,6 @@ https://www.youtube.com/@KS_ABBAS
 
 
 
-## MyFlipRotateTimer Widget Explained 🔄
-
-Below is an explanation of the `MyFlipRotateTimer` widget. This widget displays a timer using animated digit cards, supporting both countdown and current time modes. It provides smooth digit transitions using either flip or rotate animations.
-
-<!-- Using HTML to display the image -->
-<!-- Using the raw GitHub URL so pub.dev can load the image -->
-<img src="https://github.com/KSABBAS/Codeveloper_Tools_Package/blob/main/codeveloper_tools/images/MyFlipRotateTimer.png?raw=true "
-     alt="MyFlipRotateTimer Widget"
-     style="max-width:100%; padding: 4px; margin: 10px 0;" />
-
-
-### Key Concepts:
-- **Display Modes:**  
-  - `DisplayMode.countdown`: Shows a countdown timer based on an initial duration.  
-  - `DisplayMode.current12h` and `DisplayMode.current24h`: Display the current time in 12-hour (with AM/PM) or 24-hour format.
-  
-- **Animation Modes:**  
-  - `AnimationMode.flip`: Uses a flip animation (like a flip clock).  
-  - `AnimationMode.rotate`: Uses a rotate animation with sliding transitions.
-
-- **Callbacks:**  
-  Callback functions such as `onSecondFlip`, `onMinuteFlip`, `onHourFlip`, and `onAmPmFlip` allow you to react to each digit change.
-
-### Annotated Example
-
-Below is an example of how you might integrate and use `MyFlipRotateTimer` in your Flutter app:
-
-```dart
-import 'package:flutter/material.dart';
-// Import your Codeveloper Tools package (adjust the path as needed).
-import 'package:codeveloper_tools/codeveloper_tools.dart'; 
-
-void main() => runApp(FlipRotateTimerExampleApp());
-
-/// The root widget of our example application.
-class FlipRotateTimerExampleApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'MyFlipRotateTimer Example', // App title.
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: FlipRotateTimerExamplePage(), // Main page of the app.
-    );
-  }
-}
-
-/// A stateful widget that demonstrates the usage of MyFlipRotateTimer.
-class FlipRotateTimerExamplePage extends StatefulWidget {
-  @override
-  _FlipRotateTimerExamplePageState createState() => _FlipRotateTimerExamplePageState();
-}
-
-/// The state class for FlipRotateTimerExamplePage.
-class _FlipRotateTimerExamplePageState extends State<FlipRotateTimerExamplePage> {
-  // Holds the status text to display below the timer.
-  String _status = "Timer Running...";
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flip Rotate Timer Example'), // AppBar title.
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // MyFlipRotateTimer widget configured in countdown mode.
-            MyFlipRotateTimer(
-              displayMode: DisplayMode.countdown, // Use countdown mode.
-              initialDuration: Duration(seconds: 10), // Set a 10-second countdown.
-              animationMode: AnimationMode.flip, // Use flip animation.
-              digitTextStyle: TextStyle(
-                fontSize: 32,           // Digit font size.
-                fontWeight: FontWeight.bold,
-                color: Colors.white,    // White text color.
-              ),
-              cardWidth: 50,            // Width of each digit card.
-              cardHeight: 70,           // Height of each digit card.
-              digitAnimDuration: Duration(milliseconds: 800), // Duration of the flip animation.
-              cardDecoration: BoxDecoration(
-                color: Colors.black,    // Card background color.
-                borderRadius: BorderRadius.circular(8), // Rounded corners.
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26, // Shadow color.
-                    blurRadius: 4,         // Blur radius.
-                    offset: Offset(0, 2),   // Shadow offset.
-                  ),
-                ],
-              ),
-              // Callback invoked when the countdown completes.
-              onComplete: () {
-                setState(() {
-                  _status = "Countdown Complete!";
-                });
-              },
-              // Callback for each flip of the seconds digit.
-              onSecondFlip: (timeEvent) {
-                print("Second flipped: $timeEvent");
-              },
-              onMinuteFlip: (timeEvent) {
-                print("Minute flipped: $timeEvent");
-              },
-              onHourFlip: (timeEvent) {
-                print("Hour flipped: $timeEvent");
-              },
-              onAmPmFlip: (timeEvent) {
-                print("AM/PM flipped: $timeEvent");
-              },
-            ),
-            SizedBox(height: 20), // Add space below the timer.
-            // Display the current status below the timer.
-            Text(
-              _status,
-              style: TextStyle(fontSize: 20),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-```
 
 # Video Documentation
 
@@ -184,9 +60,6 @@ class _FlipRotateTimerExamplePageState extends State<FlipRotateTimerExamplePage>
 **MyCircularCountdownTimer explanation and how to use it**  
 [![Watch Video](https://img.youtube.com/vi/HZFUPTWccag/0.jpg)](https://www.youtube.com/watch?v=HZFUPTWccag&t=1s)
 
-## MyTooltip
-**MyTooltip explanation and how to use it**  
-[![Watch Video](https://img.youtube.com/vi/N-T_f8Llny4/0.jpg)](https://www.youtube.com/watch?v=N-T_f8Llny4)
 
 ## How To Use Codeveloper Tools ( MyTools )
 **How To Use Codeveloper Tools ( MyTools ) explanation and how to use it**  
