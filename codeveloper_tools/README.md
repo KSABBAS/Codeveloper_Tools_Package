@@ -784,20 +784,429 @@ class _CombinedStarRatingDemoState extends State<CombinedStarRatingDemo> {
 ```
 
 ## StageProgressNavigator
-**StageProgressNavigator explanation and how to use it**  
+
+*StageProgressNavigator Explanation and How to Use It*
+
+StageProgressNavigator is an innovative widget designed to manage multi-page navigation with a dynamic progress indicator that shows the current stage. It supports custom page transitions (fade or slide), and lets you position the navigation bar relative to the page (top, bottom, left, or right) with customizable markers, connecting lines, and navigation controls. This widget is perfect for building guided user experiences like onboarding flows, multi-step forms, or tutorials.
+
+We explain every widget in detail on our YouTube channel—watch our step-by-step tutorials, live demos, and get in-depth explanations directly from Codeveloper.  
+Check out our channel here: [KS_ABBAS YouTube Channel](https://www.youtube.com/@KS_ABBAS).
+
 [![Watch Video](https://img.youtube.com/vi/QyLez_VMPT4/0.jpg)](https://www.youtube.com/watch?v=QyLez_VMPT4)
 
-## MyDottedCardViewer and MyMiniOnTheRightCardViewer
-**MyDottedCardViewer and MyMiniOnTheRightCardViewer explanation and how to use it**  
+## Example Code
+
+Below is an annotated example demonstrating how to integrate StageProgressNavigator into your Flutter app. Each part of the code is explained with inline comments to help you understand how the widget works together with your pages and navigation controls.
+
+```dart
+// Import the necessary Flutter package.
+import 'package:flutter/material.dart';
+// Import your package containing the StageProgressNavigator widget (adjust the import path as needed).
+import 'package:codeveloper_tools/codeveloper_tools.dart';
+
+void main() => runApp(const MyApp());
+
+/// MyApp is the root widget of the application.
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'StageProgressNavigator Demo',
+      home: const StageProgressDemo(),
+    );
+  }
+}
+
+/// StageProgressDemo demonstrates the usage of StageProgressNavigator.
+class StageProgressDemo extends StatefulWidget {
+  const StageProgressDemo({super.key});
+  
+  @override
+  State<StageProgressDemo> createState() => _StageProgressDemoState();
+}
+
+class _StageProgressDemoState extends State<StageProgressDemo> {
+  // Define sample pages for demonstration.
+  final List<Widget> pages = [
+    Container(
+      color: Colors.redAccent,
+      child: const Center(
+        child: Text(
+          'Page 1',
+          style: TextStyle(fontSize: 32, color: Colors.white),
+        ),
+      ),
+    ),
+    Container(
+      color: Colors.green,
+      child: const Center(
+        child: Text(
+          'Page 2',
+          style: TextStyle(fontSize: 32, color: Colors.white),
+        ),
+      ),
+    ),
+    Container(
+      color: Colors.blue,
+      child: const Center(
+        child: Text(
+          'Page 3',
+          style: TextStyle(fontSize: 32, color: Colors.white),
+        ),
+      ),
+    ),
+  ];
+  
+  int currentStage = 0;
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Stage Progress Navigator')),
+      body: StageProgressNavigator(
+        // List of pages to display.
+        pages: pages,
+        // Set the overall orientation (horizontal for this demo).
+        orientation: StageProgressOrientation.horizontal,
+        // Choose the type of page transition (fade or slide).
+        transitionType: TransitionType.fade,
+        // Position the navigation bar at the bottom.
+        navigationBarPosition: NavigationBarPosition.bottom,
+        // Indicator customization.
+        markerSize: 24.0,
+        lineThickness: 4.0,
+        activeColor: Colors.blue,
+        inactiveColor: Colors.grey,
+        indicatorAnimationDuration: const Duration(milliseconds: 300),
+        // Page transition duration.
+        pageTransitionDuration: const Duration(milliseconds: 300),
+        // Navigation button customization.
+        previousButtonText: 'Back',
+        nextButtonText: 'Next',
+        buttonTextStyle: const TextStyle(fontSize: 16, color: Colors.black),
+        showPreviousButton: true,
+        showNextButton: true,
+        // Navigation bar appearance.
+        navigationBarBackgroundColor: Colors.white,
+        navigationBarHeight: 120.0,
+        navigationBarPadding: const EdgeInsets.all(8.0),
+        // Callback when the stage changes.
+        onStageChanged: (stage) {
+          setState(() {
+            currentStage = stage;
+          });
+          print('Current Stage: $stage');
+        },
+      ),
+    );
+  }
+}
+```
+
+## MyDottedCardViewer
+
+*MyDottedCardViewer Explanation and How to Use It*
+
+MyDottedCardViewer is an innovative widget designed to showcase a series of cards with a customizable dotted indicator for navigation. It supports auto-scroll options, various indicator container customizations, and overlay dots, allowing you to build engaging and interactive card viewing experiences quickly and efficiently.
+
+We explain every widget in detail on our YouTube channel—watch our step-by-step tutorials, live demos, and get in-depth explanations directly from Codeveloper.  
+Check out our channel here: [KS_ABBAS YouTube Channel](https://www.youtube.com/@KS_ABBAS).
+
 [![Watch Video](https://img.youtube.com/vi/KnUcq59iDn0/0.jpg)](https://www.youtube.com/watch?v=KnUcq59iDn0)
 
+## Example Code
+
+Below is an annotated example demonstrating how to integrate MyDottedCardViewer into your Flutter app. Each part of the code is explained with inline comments to help you understand how the widget works together with your card content and dotted indicators.
+
+```dart
+// Import the necessary Flutter package.
+import 'package:flutter/material.dart';
+// Import your package containing the widget (adjust the import path as needed).
+import 'package:codeveloper_tools/codeveloper_tools.dart';
+
+void main() => runApp(const MyApp());
+
+/// MyApp is the root widget of the application.
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'MyDottedCardViewer Demo',
+      home: const DottedCardViewerDemo(),
+    );
+  }
+}
+
+/// DottedCardViewerDemo demonstrates the usage of MyDottedCardViewer.
+class DottedCardViewerDemo extends StatelessWidget {
+  const DottedCardViewerDemo({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Dotted Card Viewer')),
+      body: MyDottedCardViewer(
+        itemCount: 5,
+        // Builder callback to construct each card.
+        builder: (context, index) {
+          return Card(
+            margin: const EdgeInsets.all(16),
+            elevation: 4,
+            child: Center(
+              child: Text(
+                'Card ${index + 1}',
+                style: const TextStyle(fontSize: 24),
+              ),
+            ),
+          );
+        },
+        // Dot Indicator Customization.
+        selectedDotWidth: 14.0,
+        selectedDotHeight: 14.0,
+        unselectedDotWidth: 12.0,
+        unselectedDotHeight: 12.0,
+        selectedDotColor: Colors.blue,
+        unselectedDotColor: Colors.grey,
+        dotSpacing: 8.0,
+        dotAnimationCurve: Curves.easeInOut,
+        dotAnimationDuration: const Duration(milliseconds: 300),
+        // Page Transition Customization.
+        pageTransitionDuration: const Duration(milliseconds: 300),
+        pageTransitionCurve: Curves.easeInOut,
+        // Auto-Scroll Options.
+        autoScroll: true,
+        autoScrollInterval: const Duration(seconds: 3),
+        autoScrollAnimationDuration: const Duration(milliseconds: 300),
+        // Big Indicator Container Customization.
+        bigIndicatorContainerDecoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        bigIndicatorContainerPadding: const EdgeInsets.all(8),
+        bigIndicatorContainerAlignment: Alignment.center,
+        // Mini Indicator Container Customization.
+        miniIndicatorContainerDecoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        miniIndicatorContainerPadding: const EdgeInsets.all(10),
+        miniIndicatorContainerAlignment: Alignment.center,
+        miniIndicatorContainerMargin: EdgeInsets.zero,
+        // Overlay Dots Options.
+        overlayDots: false,
+        overlayDotsAlignment: Alignment.bottomCenter,
+        overlayDotsPadding: const EdgeInsets.only(bottom: 16),
+        // Callback when the viewed card changes.
+        onPageChanged: (index) {
+          print('Current page: $index');
+        },
+        // Callback when a card is tapped.
+        onCardPressed: (index) {
+          print('Card $index pressed');
+        },
+      ),
+    );
+  }
+}
+```
+
 ## MyMiniOnTheRightImageViewer
-**MyMiniOnTheRightImageViewer explanation and how to use it**  
+
+*MyMiniOnTheRightImageViewer Explanation and How to Use It*
+
+MyMiniOnTheRightImageViewer is an innovative image carousel widget designed to display a series of images with a mini navigation indicator (dots) positioned on the right. It supports customizable image display settings (using BoxFit), smooth auto-scroll options, and animated dot indicators to create a responsive and engaging user experience. This widget helps you build dynamic image viewers quickly and efficiently.
+
+We explain every widget in detail on our YouTube channel—watch our step-by-step tutorials, live demos, and get in-depth explanations directly from Codeveloper.  
+Check out our channel here: [KS_ABBAS YouTube Channel](https://www.youtube.com/@KS_ABBAS).
+
 [![Watch Video](https://img.youtube.com/vi/-uAwH3x0MSI/0.jpg)](https://www.youtube.com/watch?v=-uAwH3x0MSI)
 
+## Example Code
+
+Below is an annotated example demonstrating how to integrate MyMiniOnTheRightImageViewer into your Flutter app. Each part of the code is explained with inline comments to help you understand how the widget works together with your image data and customizations.
+
+```dart
+// Import the necessary Flutter packages.
+import 'package:flutter/material.dart';
+// Import your package containing MyMiniOnTheRightImageViewer (adjust the import path as needed).
+import 'package:codeveloper_tools/codeveloper_tools.dart';
+import 'dart:typed_data'; // For image data if needed.
+
+// Entry point of the Flutter application.
+void main() => runApp(const MyApp());
+
+/// MyApp is the root widget of the application.
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'MyMiniOnTheRightImageViewer Demo',
+      home: const ImageViewerDemo(),
+    );
+  }
+}
+
+/// ImageViewerDemo demonstrates the usage of MyMiniOnTheRightImageViewer.
+class ImageViewerDemo extends StatelessWidget {
+  const ImageViewerDemo({super.key});
+  
+  // Sample list of image URLs.
+  final List<String> sampleImages = const [
+    'https://via.placeholder.com/400x300.png?text=Image+1',
+    'https://via.placeholder.com/400x300.png?text=Image+2',
+    'https://via.placeholder.com/400x300.png?text=Image+3',
+    'https://via.placeholder.com/400x300.png?text=Image+4',
+  ];
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Mini On-The-Right Image Viewer')),
+      body: MyMiniOnTheRightImageViewer(
+        // Provide the list of images (URLs, asset paths, or Uint8List).
+        images: sampleImages,
+        // Image display customization.
+        imageFit: BoxFit.cover,
+        viewportFraction: 0.8,
+        scaleFactor: 0.8,
+        // Dots indicator customization.
+        showDotsIndicator: true,
+        dotSize: 8.0,
+        dotSpacing: 4.0,
+        dotColor: Colors.grey,
+        activeDotColor: Colors.blue,
+        dotAnimationDuration: const Duration(milliseconds: 300),
+        dotAnimationCurve: Curves.easeInOut,
+        // Auto-scroll options.
+        autoScroll: true,
+        autoScrollInterval: const Duration(seconds: 3),
+        autoScrollAnimationDuration: const Duration(milliseconds: 300),
+        autoScrollCurve: Curves.easeInOut,
+        // Callbacks.
+        onPageChanged: (index) {
+          print('Current page: $index');
+        },
+        onImagePressed: (index) {
+          print('Image $index pressed');
+        },
+      ),
+    );
+  }
+}
+```
+
 ## MyDottedImageViewer
-**MyDottedImageViewer explanation and how to use it**  
+
+*MyDottedImageViewer Explanation and How to Use It*
+
+MyDottedImageViewer is an innovative widget designed to display a series of images with a customizable dotted indicator for navigation. It supports images provided as asset paths, network URLs, or raw bytes (Uint8List), and offers extensive customization options for the dots indicator, page transitions, auto-scroll behavior, and container styling. This widget helps you build engaging and interactive image viewers quickly and efficiently.
+
+We explain every widget in detail on our YouTube channel—watch our step-by-step tutorials, live demos, and get in-depth explanations directly from Codeveloper.  
+Check out our channel here: [KS_ABBAS YouTube Channel](https://www.youtube.com/@KS_ABBAS).
+
 [![Watch Video](https://img.youtube.com/vi/zNGNOD9PZgE/0.jpg)](https://www.youtube.com/watch?v=zNGNOD9PZgE)
+
+## Example Code
+
+Below is an annotated example demonstrating how to integrate MyDottedImageViewer into your Flutter app. Each part of the code is explained with inline comments to help you understand how the widget works and how you can customize it to suit your needs.
+
+```dart
+// Import the necessary Flutter packages.
+import 'package:flutter/material.dart';
+// Import your package containing MyDottedImageViewer (adjust the import path as needed).
+import 'package:codeveloper_tools/codeveloper_tools.dart';
+import 'dart:typed_data';
+
+void main() => runApp(const MyApp());
+
+/// MyApp is the root widget of the application.
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'MyDottedImageViewer Demo',
+      home: const DottedImageViewerDemo(),
+    );
+  }
+}
+
+/// DottedImageViewerDemo demonstrates the usage of MyDottedImageViewer.
+class DottedImageViewerDemo extends StatelessWidget {
+  const DottedImageViewerDemo({super.key});
+  
+  // Sample list of image sources: can be asset paths, network URLs, or raw bytes.
+  final List<String> sampleImages = const [
+    'https://via.placeholder.com/400x300.png?text=Image+1',
+    'https://via.placeholder.com/400x300.png?text=Image+2',
+    'https://via.placeholder.com/400x300.png?text=Image+3',
+    'https://via.placeholder.com/400x300.png?text=Image+4',
+  ];
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Dotted Image Viewer')),
+      body: MyDottedImageViewer(
+        // Provide the list of images (asset paths, URLs, or Uint8List data).
+        images: sampleImages,
+        // Customize how images are fitted inside the viewer.
+        imageFit: BoxFit.cover,
+        // Dot Indicator Customization.
+        selectedDotWidth: 14.0,
+        selectedDotHeight: 14.0,
+        unselectedDotWidth: 12.0,
+        unselectedDotHeight: 12.0,
+        selectedDotColor: Colors.blue,
+        unselectedDotColor: Colors.grey,
+        dotSpacing: 8.0,
+        dotAnimationCurve: Curves.easeInOut,
+        dotAnimationDuration: const Duration(milliseconds: 300),
+        // Page Transition Customization.
+        pageTransitionDuration: const Duration(milliseconds: 300),
+        pageTransitionCurve: Curves.easeInOut,
+        scrollPhysics: const BouncingScrollPhysics(),
+        // Auto-Scroll Options.
+        autoScroll: true,
+        autoScrollInterval: const Duration(seconds: 3),
+        autoScrollAnimationDuration: const Duration(milliseconds: 300),
+        // Big and Mini Indicator Container Customization.
+        bigIndicatorContainerDecoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        bigIndicatorContainerPadding: const EdgeInsets.all(8),
+        bigIndicatorContainerAlignment: Alignment.center,
+        miniIndicatorContainerDecoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        miniIndicatorContainerPadding: const EdgeInsets.all(10),
+        miniIndicatorContainerAlignment: Alignment.center,
+        miniIndicatorContainerMargin: EdgeInsets.zero,
+        // Overlay Dots Options.
+        overlayDots: false,
+        overlayDotsAlignment: Alignment.bottomCenter,
+        overlayDotsPadding: const EdgeInsets.only(bottom: 16),
+        // Callbacks.
+        onPageChanged: (index) {
+          print('Current image index: $index');
+        },
+        onImagePressed: (index) {
+          print('Image at index $index pressed');
+        },
+      ),
+    );
+  }
+}
+```
 
 ## SoundRecorder
 **SoundRecorder explanation and how to use it**  
