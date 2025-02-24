@@ -1,6 +1,7 @@
 import 'package:codeveloper_tools/MyTools/tools/CMaker_Tools/AnimatedCMaker.dart';
 import 'package:codeveloper_tools/MyTools/tools/CMaker_Tools/CMaker.dart';
 import 'package:flutter/material.dart';
+// ignore: must_be_immutable
 class MySwitchTitleBuilder extends StatefulWidget {
   MySwitchTitleBuilder({
     super.key,

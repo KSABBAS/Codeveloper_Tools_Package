@@ -50,7 +50,7 @@ export 'MyTools/tools/Generator_Tools/CustomToolTip.dart';
 export 'MyTools/tools/Generator_Tools/dayListGenerator.dart';
 export 'MyTools/tools/Generator_Tools/FlipCard.dart';
 export 'MyTools/tools/Generator_Tools/generateQRCode.dart';
-export 'MyTools/tools/Generator_Tools/generateStarRating.dart';
+export 'MyTools/tools/Generator_Tools/GenerateStarRating.dart';
 export 'MyTools/tools/Generator_Tools/MyPopUpWidget.dart' hide PopupDirection;
 
 // Grids_Tools

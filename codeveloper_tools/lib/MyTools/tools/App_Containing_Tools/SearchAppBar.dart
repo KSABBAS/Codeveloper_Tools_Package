@@ -2,6 +2,7 @@ import 'package:codeveloper_tools/MyTools/tools/CMaker_Tools/CMaker.dart';
 import 'package:codeveloper_tools/MyTools/tools/builder_tools/DistributiveGView.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SearchAppBar extends StatefulWidget {
   SearchAppBar({
     super.key,
