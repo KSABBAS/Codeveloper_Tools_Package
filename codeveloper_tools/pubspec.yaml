@@ -1,6 +1,6 @@
 name: codeveloper_tools
-description: "A suite of Flutter UI tools by Codeveloper, featuring custom widgets, media pickers , bars , and more to speed up app development."
-version: 0.0.13
+description: "A suite of Flutter UI tools by Codeveloper..."
+version: 0.0.16
 repository: https://github.com/KSABBAS/Codeveloper_Tools_Package
 homepage: https://codeveloper.online
 
@@ -39,7 +39,6 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 flutter:
-  # Plugin section (dummy plugin for cross-platform support)
   plugin:
     platforms:
       android:
@@ -51,24 +50,8 @@ flutter:
         pluginClass: CodeveloperToolsPlugin
       macos:
         pluginClass: CodeveloperToolsPlugin
-      windows:
-        pluginClass: CodeveloperToolsPlugin
       linux:
         pluginClass: CodeveloperToolsPlugin
 
-  # Uncomment and configure the assets/fonts sections if needed.
   assets:
     - images/
-  #   - images/a_dot_ham.jpeg
-  #
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
