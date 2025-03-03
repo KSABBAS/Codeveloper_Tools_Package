@@ -36,7 +36,7 @@ Add Codeveloper Tools to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  codeveloper_tools: ^0.0.17
+  codeveloper_tools: ^0.0.18
 ```
 
 ## YouTube Channel

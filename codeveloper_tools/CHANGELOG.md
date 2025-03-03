@@ -34,3 +34,9 @@
 
 - **Minor Fixes:**
   - General code and documentation formatting improvements.
+
+# 0.0.18
+
+- Added support for Windows platform.
+- Created `codeveloper_tools_plugin.cpp` for Windows implementation.
+- Updated `pubspec.yaml` to include Windows platform.

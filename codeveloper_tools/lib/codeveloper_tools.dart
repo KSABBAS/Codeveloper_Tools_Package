@@ -1,4 +1,3 @@
-
 // --------------- Functions Folder ---------------
 
 // Launcher_Functions
@@ -104,3 +103,17 @@ export 'MyTools/tools/Video_Tools/Chewie_Player/ChewieVideoPlayer.dart';
 export 'MyTools/tools/Video_Tools/MediaKitVideoPlayer/MyMediaKitVideo.dart';
 export 'MyTools/tools/Video_Tools/miniVideoPlayer/miniVideoPlayer.dart';
 export 'MyTools/tools/Video_Tools/MyVideoPlayers/MyVideoPlayer.dart';
+
+import 'dart:async';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+
+class CodeveloperTools {
+  static const MethodChannel _channel = MethodChannel('codeveloper_tools');
+
+  static Future<String?> getPlatformVersion() async {
+    final String? version = await _channel.invokeMethod('getPlatformVersion');
+    return version;
+  }
+  // Add other platform-specific method implementations here
+}
