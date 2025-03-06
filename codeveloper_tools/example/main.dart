@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(FlipperDemoApp());
 
 class FlipperDemoApp extends StatelessWidget {
+  const FlipperDemoApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,6 +16,8 @@ class FlipperDemoApp extends StatelessWidget {
 }
 
 class FlipperDemoPage extends StatefulWidget {
+  const FlipperDemoPage({super.key});
+
   @override
   _FlipperDemoPageState createState() => _FlipperDemoPageState();
 }

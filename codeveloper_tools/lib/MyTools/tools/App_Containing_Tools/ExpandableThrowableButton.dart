@@ -5,10 +5,10 @@ class MyFloatingMenuButton extends StatelessWidget {
   final DraggableFloatingMenu floatingWidget;
 
   const MyFloatingMenuButton({
-    Key? key,
+    super.key,
     required this.body,
     required this.floatingWidget,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class DraggableFloatingMenu extends StatefulWidget {
   final ValueChanged<int>? onItemTap;
 
   const DraggableFloatingMenu({
-    Key? key,
+    super.key,
     required this.itemCount,
     required this.itemBuilder,
     this.onItemTap,
@@ -115,7 +115,7 @@ class DraggableFloatingMenu extends StatefulWidget {
     this.menuItemAlignment,
     this.menuItemSpacing,
     this.menuItemDecoration,
-  }) : super(key: key);
+  });
 
   @override
   _DraggableFloatingMenuState createState() => _DraggableFloatingMenuState();
