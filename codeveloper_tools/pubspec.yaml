@@ -1,6 +1,6 @@
 name: codeveloper_tools
 description: "Codeveloper Tools is a lightweight Flutter package that provides a suite of custom UI widgets and helper functions to accelerate your app development. Built for simplicity and consistency, our tools help you quickly integrate polished, responsive components into your projects."
-version: 0.0.21
+version: 0.0.22
 repository: https://github.com/KSABBAS/Codeveloper_Tools_Package
 homepage: https://codevolper-portfolio.web.app
 
@@ -56,8 +56,9 @@ flutter:
       linux:
         pluginClass: CodeveloperToolsPlugin
       windows:
-        pluginClass: CodeveloperToolsPluginCApi
-        fileName: codeveloper_tools_plugin_c_api.cpp
+        pluginClass: CodeveloperToolsPlugin
+        fileName: codeveloper_tools_plugin.cpp
+        pluginName: codeveloper_tools_plugin  # Add this line
 
   assets:
     - images/
