@@ -17,7 +17,7 @@ FLUTTER_PLUGIN_EXPORT void CodeveloperToolsPluginRegisterWithRegistrar(
     FlutterDesktopPluginRegistrarRef registrar);
 
 #if defined(__cplusplus)
-}
+}  // extern "C"
 #endif
 
 #endif  // FLUTTER_PLUGIN_CODEVELOPER_TOOLS_PLUGIN_H_
