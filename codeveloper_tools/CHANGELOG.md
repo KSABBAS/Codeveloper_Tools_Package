@@ -46,3 +46,5 @@
 - Added isconnected tool
 - Created `codeveloper_tools_plugin.cpp` for Windows implementation.
 - Updated `pubspec.yaml` to include Windows platform.
+# 0.0.20
+- fixed a performance issue 
