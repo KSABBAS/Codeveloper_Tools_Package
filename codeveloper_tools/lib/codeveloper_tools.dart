@@ -10,6 +10,9 @@ export 'MyTools/Functions/Height_and_width_Functions.dart';
 export 'MyTools/Functions/MyResponsive.dart';
 export 'MyTools/Functions/WidgetListBuilder.dart';
 
+// Internet Tools
+export 'MyTools/tools/internet_tools/IsConnected/IsConnected.dart';
+
 // --------------- Tools Folder ---------------
 
 // App_Containing_Tools -> Navigation_Bars

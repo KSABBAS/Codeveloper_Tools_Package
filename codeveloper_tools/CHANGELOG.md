@@ -40,3 +40,9 @@
 - Added support for Windows platform.
 - Created `codeveloper_tools_plugin.cpp` for Windows implementation.
 - Updated `pubspec.yaml` to include Windows platform.
+# 0.0.19
+
+- Added support for Windows platform.
+- Added isconnected tool
+- Created `codeveloper_tools_plugin.cpp` for Windows implementation.
+- Updated `pubspec.yaml` to include Windows platform.
